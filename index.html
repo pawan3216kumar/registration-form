@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+	<input type="text" name="name" id="name">
+	<select id="gender">
+		<option value="">--</option>
+		<option value="male">M</option>
+		<option value="female">F</option>
+	</select>
+	<input type="text" name="email" id="email">
+	<input type="text" name="mobile" id="mobile">
+	<hr>
+	<h1 id="dName">NAME</h1>
+	<h2 id="dGender">GENDER</h2>
+	<h3 id="dEmail">EMAIL</h3>
+	<h4 id="dMobile">MOBILE</h4>
+	<hr>
+	<button onclick="showName()" id="name">NAME</button>
+	<button onclick="showGender()" id="gender">GENDER</button>
+	<button onclick="showEmail()" id="email">EMAIL</button>
+	<button onclick="showMobile()" id="mobile">MOBILE</button>
+	<button onclick="resetForm()" id="resetForm">RESET FORM</button>
+	<button onclick="resetDisplay()" id="resetDisplay">RESET DISPLAY</button>
+	<script type="text/javascript">
+		
+		let username = document.querySelector("#name")
+		let userGender = document.querySelector("#gender")
+		let userEmail = document.querySelector("#email")
+		let userMobile = document.querySelector("#mobile")
+		
+		let name = document.querySelector("h1")
+		let gender = document.querySelector("h2")
+		let email = document.querySelector("h3")
+		let mobile = document.querySelector("h4")
+
+		function showName() {
+			event.preventDefault()
+			name.innerHTML = ""
+			
+			name.append(username.value)
+			
+		}
+		
+		function showGender() {
+			event.preventDefault()
+			
+			// Show the selected gender inside h2
+			gender.innerHTML = ""
+			
+			gender.append(userGender.value)
+			
+		}
+		
+		function showEmail() {
+			event.preventDefault()
+			
+			// Show the filled email inside h3
+			email.innerHTML = ""
+			
+			email.append(userEmail.value)
+		}
+		
+		function showMobile() {
+			event.preventDefault()
+
+			// Show the filled mobile inside h4
+			
+			mobile.innerHTML = ""
+
+			mobile.append(userMobile.value)
+		}
+
+		function resetForm() {
+
+			username.value = ""
+			userGender.value = ""
+			userEmail.value = ""
+			userMobile.value = ""
+
+			// Reset all the form elements to default values (blank "")
+		}
+
+		function resetDisplay() {
+			
+			// Reset all the headings (h1, h2, h3, h4) to blank values
+			name.innerHTML = ""
+			gender.innerHTML = ""
+			email.innerHTML = ""
+			mobile.innerHTML = ""
+		}
+	</script>
+</body>
+</html>
